@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberStore | Library</title>
+    <link rel="stylesheet" href="style-lib.css">
+</head>
+<body>
+
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">Cyber<span>Store</span></div>
+            <div class="main-links">
+                <a href="index.html">Store</a>
+                <a href="library.html" class="active">Library</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="steam-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <input type="text" placeholder="Поиск в библиотеке..." readonly>
+            </div>
+            
+            <div class="game-list">
+                <label for="game-1" class="game-item"><div class="mini-thumb g1"></div><span>Counter-Strike 2</span></label>
+                <label for="game-2" class="game-item"><div class="mini-thumb g6"></div><span>Cyberpunk 2077</span></label>
+                <label for="game-3" class="game-item"><div class="mini-thumb g10"></div><span>Elden Ring</span></label>
+                <label for="game-4" class="game-item"><div class="mini-thumb g15"></div><span>Dota 2</span></label>
+                <label for="game-5" class="game-item"><div class="mini-thumb g11"></div><span>God of War</span></label>
+                <label for="game-6" class="game-item"><div class="mini-thumb g13"></div><span>RDR 2</span></label>
+                <label for="game-7" class="game-item"><div class="mini-thumb g16"></div><span>Resident Evil 4</span></label>
+            </div>
+        </aside>
+
+        <main class="details-pane">
+            <input type="radio" name="focus" id="game-1" checked>
+            <input type="radio" name="focus" id="game-2">
+            <input type="radio" name="focus" id="game-3">
+            <input type="radio" name="focus" id="game-4">
+            <input type="radio" name="focus" id="game-5">
+            <input type="radio" name="focus" id="game-6">
+            <input type="radio" name="focus" id="game-7">
+
+            <div class="game-view gv-1"><div class="hero g1"><div class="hero-content"><h1>Counter-Strike 2</h1><div class="action-bar"><button class="play-btn">ИГРАТЬ</button><div class="status-info"><span>ВРЕМЯ</span><strong>1,452 ч.</strong></div></div></div></div></div>
+            <div class="game-view gv-2"><div class="hero g6"><div class="hero-content"><h1>Cyberpunk 2077</h1><div class="action-bar"><button class="play-btn update">ОБНОВИТЬ</button><div class="status-info"><span>ВРЕМЯ</span><strong>124 ч.</strong></div></div></div></div></div>
+            <div class="game-view gv-3"><div class="hero g10"><div class="hero-content"><h1>Elden Ring</h1><div class="action-bar"><button class="play-btn">ИГРАТЬ</button><div class="status-info"><span>ВРЕМЯ</span><strong>310 ч.</strong></div></div></div></div></div>
+            <div class="game-view gv-4"><div class="hero g15"><div class="hero-content"><h1>Dota 2</h1><div class="action-bar"><button class="play-btn">ИГРАТЬ</button><div class="status-info"><span>ВРЕМЯ</span><strong>5,100 ч.</strong></div></div></div></div></div>
+            <div class="game-view gv-5"><div class="hero g11"><div class="hero-content"><h1>God of War</h1><div class="action-bar"><button class="play-btn">ИГРАТЬ</button><div class="status-info"><span>ВРЕМЯ</span><strong>42 ч.</strong></div></div></div></div></div>
+            <div class="game-view gv-6"><div class="hero g13"><div class="hero-content"><h1>Red Dead Redemption 2</h1><div class="action-bar"><button class="play-btn">ИГРАТЬ</button><div class="status-info"><span>ВРЕМЯ</span><strong>89 ч.</strong></div></div></div></div></div>
+            <div class="game-view gv-7"><div class="hero g16"><div class="hero-content"><h1>Resident Evil 4</h1><div class="action-bar"><button class="play-btn">ИГРАТЬ</button><div class="status-info"><span>ВРЕМЯ</span><strong>15 ч.</strong></div></div></div></div></div>
+        </main>
+    </div>
+
+</body>
+</html>

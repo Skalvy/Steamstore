@@ -1,0 +1,131 @@
+:root {
+    --accent: #00f2ff;
+    --steam-blue: #1b2838;
+    --sidebar-bg: #171a21;
+    --main-bg: #1e2127;
+}
+
+body {
+    margin: 0;
+    background: #000;
+    color: #c6d4df;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    overflow: hidden;
+}
+
+.g1 { background-image: url('https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/730/library_hero.jpg'); }
+.g6 { background-image: url('https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1091500/library_hero.jpg'); }
+.g10 { background-image: url('https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1245620/library_hero.jpg'); }
+.g15 { background-image: url('https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/570/library_hero.jpg'); }
+.g11 { background-image: url('https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1593500/library_hero.jpg'); }
+.g13 { background-image: url('https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1174180/library_hero.jpg'); }
+.g16 { background-image: url('https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2050650/library_hero.jpg'); }
+
+
+#game-1:checked ~ .gv-1,
+#game-2:checked ~ .gv-2,
+#game-3:checked ~ .gv-3,
+#game-4:checked ~ .gv-4,
+#game-5:checked ~ .gv-5,
+#game-6:checked ~ .gv-6,
+#game-7:checked ~ .gv-7 {
+    display: block;
+}
+
+
+#game-1:checked ~ .sidebar label[for="game-1"],
+#game-2:checked ~ .sidebar label[for="game-2"],
+
+#game-7:checked ~ .sidebar label[for="game-7"] {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--accent);
+}
+
+.header {
+    height: 60px;
+    background: var(--sidebar-bg);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    border-bottom: 1px solid rgba(0,0,0,0.4);
+}
+
+.nav { display: flex; justify-content: space-between; width: 100%; align-items: center; }
+.logo span { color: var(--accent); font-weight: bold; }
+.main-links a { color: white; text-decoration: none; margin-left: 20px; opacity: 0.6; }
+.main-links a.active { opacity: 1; border-bottom: 2px solid var(--accent); }
+
+.steam-layout { display: flex; height: calc(100vh - 60px); }
+
+.sidebar {
+    width: 280px;
+    background: var(--sidebar-bg);
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid rgba(0,0,0,0.5);
+}
+
+.sidebar-header { padding: 15px; }
+.sidebar-header input {
+    width: 100%; background: #212429; border: none; padding: 10px;
+    color: white; border-radius: 4px; box-sizing: border-box;
+}
+
+.game-list { flex: 1; overflow-y: auto; }
+.game-item {
+    display: flex; align-items: center; padding: 10px 15px;
+    cursor: pointer; transition: 0.2s;
+}
+
+.game-item:hover { background: rgba(255,255,255,0.05); }
+.mini-thumb { width: 30px; height: 30px; margin-right: 12px; border-radius: 3px; }
+
+.details-pane { flex: 1; position: relative; background: var(--main-bg); }
+input[type="radio"] { display: none; }
+
+.game-view { display: none; height: 100%; animation: fadeIn 0.4s ease-out; }
+
+#game-1:checked ~ .gv-1,
+#game-2:checked ~ .gv-2 { display: block; }
+
+.hero {
+    height: 350px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+}
+
+.hero-content {
+    background: linear-gradient(transparent, var(--main-bg));
+    width: 100%;
+    padding: 40px;
+}
+
+.hero-content h1 { font-size: 56px; margin: 0; text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+
+.action-bar {
+    display: flex; align-items: center; gap: 30px; margin-top: 20px;
+}
+
+.play-btn {
+    background: linear-gradient(to right, #75b022, #588a1b);
+    border: none; color: white; padding: 12px 60px;
+    font-size: 20px; font-weight: 800; border-radius: 4px;
+    cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.play-btn:hover { background: linear-gradient(to right, #8ed62a, #69a620); }
+.play-btn.update { background: #1a9fff; }
+
+.status-info span { display: block; font-size: 11px; color: #8f98a0; }
+.status-info strong { font-size: 14px; color: white; }
+
+.preloader {
+    position: fixed; inset: 0; background: #000; z-index: 1000;
+    display: flex; justify-content: center; align-items: center;
+    animation: fadeOut 0.5s forwards 1.2s;
+}
+.loader { width: 30px; height: 30px; border: 2px solid var(--accent); animation: rot 1s infinite alternate; }
+@keyframes rot { to { transform: rotate(180deg) scale(0.5); border-radius: 50%; } }
+@keyframes fadeOut { to { opacity: 0; visibility: hidden; } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
